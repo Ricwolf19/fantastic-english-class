@@ -25,10 +25,13 @@ base de datos, sin autenticación, sin panel.
 - **Resend** — envío del formulario de contacto (server action).
 - **reCAPTCHA v3** — verificación anti-bot del formulario (opcional, env-gated).
 - **Geist Sans** (texto) + **Fredoka** (display) vía `next/font` (self-hosted).
+- **Vercel Analytics + Speed Insights** — métricas de tráfico y Web Vitals de
+  primera parte, sin cookies y sin env vars (montados en el root layout).
 - **Deploy**: Vercel.
 
-No hay DB, ORM, auth, PWA offline, analytics ni panel de administración: es una
-landing de marketing deliberadamente simple.
+No hay DB, ORM, auth, PWA offline ni panel de administración: es una landing de
+marketing deliberadamente simple. La única telemetría es Vercel Analytics/Speed
+Insights (privacy-first, sin cookies); no se añaden GA/PostHog ni similares.
 
 ## 2. Estructura
 
@@ -139,7 +142,8 @@ formulario. Ver `.env.example`.
 - Hardcodear datos del cliente fuera de `lib/site.ts`.
 - Usar hex en componentes en vez de tokens (`bg-brand`, `text-ink-600`, …).
 - Añadir una clave a `es.ts` sin su par en `en.ts` (rompe el build).
-- Introducir DB/auth/analytics "por si acaso" — está fuera de alcance.
+- Introducir DB/auth "por si acaso" — está fuera de alcance. (La telemetría se
+  limita a Vercel Analytics/Speed Insights; no añadir GA/PostHog ni tag managers.)
 - Redibujar la mascota: usar el SVG oficial (`app/icon.svg` / `public/mascot.svg`).
 
 ## 10. Invariants (no romper sin avisar)

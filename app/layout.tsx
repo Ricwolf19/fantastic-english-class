@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Baloo_2 } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GeistSans } from "geist/font/sans";
 
 import { Providers } from "@/components/providers";
@@ -31,7 +33,7 @@ export const metadata: Metadata = {
     template: `%s · ${site.brand}`,
   },
   description:
-    "Clases de inglés en Chihuahua con Zaida Armenta, maestra certificada. Clases particulares, para niños, conversación y preparación de exámenes. Presencial u online.",
+    "Clases de inglés en Chihuahua con Zaida Armenta, maestra certificada. Particulares, niños, conversación y examen. Presencial u online.",
   applicationName: site.brand,
   authors: [{ name: site.teacher.name }],
   creator: site.teacher.name,
@@ -94,6 +96,8 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => (
   >
     <body className="min-h-dvh font-sans antialiased">
       <Providers>{children}</Providers>
+      <Analytics />
+      <SpeedInsights />
     </body>
   </html>
 );

@@ -6,10 +6,13 @@ export const size = ogSize;
 export const contentType = ogContentType;
 
 const Image = () =>
-  renderOg(
-    "Speak English with confidence",
-    site.tagline.en,
-    "Personalized lessons with Zaida Armenta. In-person or online.",
-  );
+  renderOg({
+    eyebrow: site.tagline.en,
+    title: "Speak English with confidence",
+    description: `Personalized lessons with ${site.teacher.shortName}, a certified teacher.`,
+    tags: ["Private", "Kids", "Conversation"],
+    footerRight: "In-person or online",
+    accent: "pink",
+  });
 
 export default Image;

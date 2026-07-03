@@ -7,6 +7,10 @@ import { en } from "./en";
 
 export type Locale = "es" | "en";
 
+/** Type guard for untrusted values (route params, query strings). */
+export const isLocale = (value: string): value is Locale =>
+  value === "es" || value === "en";
+
 /** Cookie name shared by the server (SSR) and client (toggle persistence). */
 export const LOCALE_COOKIE = "fec_locale";
 

@@ -6,10 +6,12 @@ export const size = ogSize;
 export const contentType = ogContentType;
 
 const Image = () =>
-  renderOg(
-    "Habla inglés con confianza",
-    site.tagline.es,
-    "Clases personalizadas con Zaida Armenta. Presencial u online.",
-  );
+  renderOg({
+    eyebrow: site.tagline.es,
+    title: "Habla inglés con confianza",
+    description: `Clases personalizadas con ${site.teacher.shortName}, maestra certificada.`,
+    tags: ["Particulares", "Niños", "Conversación"],
+    accent: "pink",
+  });
 
 export default Image;
