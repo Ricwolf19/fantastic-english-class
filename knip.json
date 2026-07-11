@@ -4,6 +4,13 @@
     "@secretlint/secretlint-rule-preset-recommend",
     "sharp"
   ],
+  "entry": [
+    "components/marketing/About.tsx",
+    "components/marketing/Credentials.tsx",
+    "components/marketing/WhyMe.tsx",
+    "components/marketing/Comments.tsx",
+    "components/contact/SuggestionForm.tsx"
+  ],
   "rules": {
     "exports": "warn",
     "types": "warn",

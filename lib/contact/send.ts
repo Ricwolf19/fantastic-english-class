@@ -27,20 +27,39 @@ export const sendContactMessage = async (
   safeAsync(async () => {
     const locale: Locale = input.locale === "en" ? "en" : "es";
     const t = createT(locale);
+    const isSuggestion = input.kind === "suggestion";
 
     const name = asString(input.name);
     const email = asString(input.email);
     const message = asString(input.message);
 
     ensureValid({
-      name: [
-        { valid: name.length >= 2, message: t("contact.errorName") },
-        { valid: name.length <= 100, message: t("contact.errorNameLong") },
-      ],
-      email: [
-        { valid: email.length > 0, message: t("contact.errorRequired") },
-        { valid: EMAIL_RE.test(email), message: t("contact.errorEmail") },
-      ],
+      // El buzón de comentarios (suggestion) hace opcionales nombre y correo;
+      // el correo, si se escribe, se sigue validando.
+      ...(isSuggestion
+        ? email.length > 0
+          ? {
+              email: [
+                {
+                  valid: EMAIL_RE.test(email),
+                  message: t("contact.errorEmail"),
+                },
+              ],
+            }
+          : {}
+        : {
+            name: [
+              { valid: name.length >= 2, message: t("contact.errorName") },
+              {
+                valid: name.length <= 100,
+                message: t("contact.errorNameLong"),
+              },
+            ],
+            email: [
+              { valid: email.length > 0, message: t("contact.errorRequired") },
+              { valid: EMAIL_RE.test(email), message: t("contact.errorEmail") },
+            ],
+          }),
       message: [
         { valid: message.length >= 10, message: t("contact.errorMessage") },
         {
@@ -62,12 +81,20 @@ export const sendContactMessage = async (
     }
 
     const resend = new Resend(apiKey);
+    const subject = isSuggestion
+      ? `[fantasticenglishclass] Nuevo comentario`
+      : `[fantasticenglishclass] Nuevo mensaje de ${name}`;
+    const text = isSuggestion
+      ? `Tipo: Comentario / sugerencia\nNombre: ${name || "—"}\nEmail: ${
+          email || "—"
+        }\nIdioma: ${locale}\n\n${message}`
+      : `Nombre: ${name}\nEmail: ${email}\nIdioma: ${locale}\n\n${message}`;
     const { error } = await resend.emails.send({
       from: process.env.CONTACT_FROM_EMAIL ?? DEFAULT_FROM,
       to: process.env.CONTACT_TO_EMAIL ?? site.contact.email,
-      replyTo: email,
-      subject: `[fantasticenglishclass] Nuevo mensaje de ${name}`,
-      text: `Nombre: ${name}\nEmail: ${email}\nIdioma: ${locale}\n\n${message}`,
+      ...(email ? { replyTo: email } : {}),
+      subject,
+      text,
     });
     if (error) {
       throw new ExternalServiceError(t("contact.errorGeneric"), error.message);

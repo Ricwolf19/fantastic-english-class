@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GeistSans } from "geist/font/sans";
 
+import { WhatsAppFab } from "@/components/layout/WhatsAppFab";
 import { Providers } from "@/components/providers";
 import { site } from "@/lib/site";
 import { siteUrl } from "@/lib/utils";
@@ -95,7 +96,10 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => (
     suppressHydrationWarning
   >
     <body className="min-h-dvh font-sans antialiased">
-      <Providers>{children}</Providers>
+      <Providers>
+        {children}
+        <WhatsAppFab />
+      </Providers>
       <Analytics />
       <SpeedInsights />
     </body>
