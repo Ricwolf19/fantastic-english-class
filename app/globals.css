@@ -141,6 +141,17 @@
   border-color: rgb(var(--line));
 }
 
+/*
+ * Todo control accionable recibe cursor pointer (Preflight de Tailwind los deja
+ * en flecha). Los deshabilitados conservan la flecha por defecto.
+ */
+button:not(:disabled),
+[role="button"]:not(:disabled),
+label[for],
+summary {
+  cursor: pointer;
+}
+
 html {
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
@@ -252,4 +263,31 @@ body {
 
 @utility animate-float {
   animation: fec-float 4s ease-in-out infinite;
+}
+
+/* ── Accordion (Radix) — colapsa usando la altura que expone Radix ───────── */
+@keyframes fec-accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes fec-accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+@utility animate-accordion-down {
+  animation: fec-accordion-down 0.2s ease-out;
+}
+
+@utility animate-accordion-up {
+  animation: fec-accordion-up 0.2s ease-out;
 }

@@ -39,13 +39,6 @@ export const MapPinIcon = (p: IconProps) => (
   </Base>
 );
 
-export const UserIcon = (p: IconProps) => (
-  <Base {...p}>
-    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
-    <circle cx="12" cy="7" r="4" />
-  </Base>
-);
-
 export const SmileIcon = (p: IconProps) => (
   <Base {...p}>
     <circle cx="12" cy="12" r="10" />
@@ -65,20 +58,6 @@ export const AwardIcon = (p: IconProps) => (
   <Base {...p}>
     <path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526" />
     <circle cx="12" cy="8" r="6" />
-  </Base>
-);
-
-export const BriefcaseIcon = (p: IconProps) => (
-  <Base {...p}>
-    <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-    <rect x="2" y="6" width="20" height="14" rx="2" />
-  </Base>
-);
-
-export const BookIcon = (p: IconProps) => (
-  <Base {...p}>
-    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
-    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2" />
   </Base>
 );
 

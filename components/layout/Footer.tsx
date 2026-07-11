@@ -1,8 +1,11 @@
+import Link from "next/link";
+
 import { Logo } from "@/components/brand/Logo";
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon";
 import { MailIcon, MapPinIcon } from "@/components/icons";
 import { Container } from "@/components/shared/Container";
 import { createT, type Locale } from "@/lib/i18n/config";
+import { ROUTES } from "@/lib/i18n/routes";
 import { site, waLink } from "@/lib/site";
 
 /** Enlaces sociales presentes (los `null` en site.social se omiten). */
@@ -17,16 +20,14 @@ const socialLinks = (): Array<[name: string, url: string]> =>
 
 export const Footer = ({ locale }: { locale: Locale }) => {
   const t = createT(locale);
-  const base = locale === "en" ? "/en" : "/";
-  const ids =
-    locale === "en"
-      ? { about: "about", services: "classes", why: "why", contact: "contact" }
-      : {
-          about: "sobre-mi",
-          services: "servicios",
-          why: "por-que",
-          contact: "contacto",
-        };
+  const base = ROUTES.home[locale];
+  const navLinks = [
+    { href: ROUTES.kids[locale], label: t("nav.kids") },
+    { href: ROUTES.regular[locale], label: t("nav.regular") },
+    { href: ROUTES.spanish[locale], label: t("nav.spanish") },
+    { href: ROUTES.specials[locale], label: t("nav.specials") },
+    { href: ROUTES.contact[locale], label: t("nav.contact") },
+  ];
   const socials = socialLinks();
   const year = new Date().getFullYear();
 
@@ -46,29 +47,13 @@ export const Footer = ({ locale }: { locale: Locale }) => {
               {t("footer.navTitle")}
             </p>
             <ul className="text-ink-600 mt-4 space-y-2.5 text-sm">
-              <li>
-                <a href={`${base}#${ids.about}`} className="hover:text-brand">
-                  {t("nav.about")}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`${base}#${ids.services}`}
-                  className="hover:text-brand"
-                >
-                  {t("nav.services")}
-                </a>
-              </li>
-              <li>
-                <a href={`${base}#${ids.why}`} className="hover:text-brand">
-                  {t("nav.why")}
-                </a>
-              </li>
-              <li>
-                <a href={`${base}#${ids.contact}`} className="hover:text-brand">
-                  {t("nav.contact")}
-                </a>
-              </li>
+              {navLinks.map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className="hover:text-brand">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 

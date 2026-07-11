@@ -15,6 +15,10 @@ export const OG_SECTIONS = [
   "why",
   "credentials",
   "contact",
+  "kids",
+  "regular",
+  "spanish",
+  "specials",
 ] as const;
 
 export type OgSection = (typeof OG_SECTIONS)[number];
@@ -80,6 +84,42 @@ export const ogSectionCopy = (
         description: t("contact.subtitle"),
         tags: [site.location.areaServed],
         accent: "tangerine",
+      };
+    case "kids":
+      return {
+        eyebrow: t("kids.eyebrow"),
+        title: t("kids.title"),
+        description: t("kids.subtitle"),
+        tags:
+          locale === "en" ? ["Ages 6–11", "Online"] : ["6 a 11 años", "Online"],
+        accent: "sky",
+      };
+    case "regular":
+      return {
+        eyebrow: t("regular.eyebrow"),
+        title: t("regular.title"),
+        description: t("regular.subtitle"),
+        tags:
+          locale === "en"
+            ? ["Beginner", "Intermediate", "Advanced"]
+            : ["Principiantes", "Intermedios", "Avanzados"],
+        accent: "grape",
+      };
+    case "spanish":
+      return {
+        eyebrow: t("spanish.eyebrow"),
+        title: t("spanish.title"),
+        description: t("spanish.subtitle"),
+        tags:
+          locale === "en" ? ["For English speakers"] : ["Para angloparlantes"],
+        accent: "lime",
+      };
+    case "specials":
+      return {
+        eyebrow: t("specials.eyebrow"),
+        title: t("specials.title"),
+        description: t("specials.subtitle"),
+        accent: "amber",
       };
     case "home":
     default:

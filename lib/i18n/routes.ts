@@ -5,16 +5,22 @@ import type { Locale } from "./config";
 /**
  * Mapa de rutas — única fuente de verdad que empareja la URL en español (raíz)
  * y en inglés (/en) de cada página. Alimenta nav, el toggle de idioma, los
- * alternates hreflang y el sitemap. Al ser una landing one-page el mapa es
- * mínimo, pero escala agregando entradas si más adelante hay más páginas.
+ * alternates hreflang, el sitemap y la detección de idioma (`proxy.ts`). Para
+ * agregar una página basta con sumar una entrada aquí (más su carpeta en `app/`).
  */
-export type RouteId = "home";
+export type RouteId =
+  "home" | "kids" | "regular" | "spanish" | "specials" | "contact";
 
 type RouteEntry = { es: string; en: string };
 
-/** ES es la raíz (mercado primario); EN vive bajo /en. */
+/** ES es la raíz (mercado primario); EN vive bajo /en. Slugs sin trailing slash. */
 export const ROUTES: Record<RouteId, RouteEntry> = {
   home: { es: "/", en: "/en" },
+  kids: { es: "/ninos", en: "/en/kids" },
+  regular: { es: "/cursos-regulares", en: "/en/regular" },
+  spanish: { es: "/clases-espanol", en: "/en/spanish" },
+  specials: { es: "/especiales", en: "/en/special-classes" },
+  contact: { es: "/contacto", en: "/en/contact" },
 };
 
 /**
@@ -33,8 +39,15 @@ export const metaAlternates = (
   },
 });
 
-/** URL hermana del pathname actual (para el toggle de idioma). */
+/**
+ * URL hermana del pathname actual (para el toggle de idioma). Busca la ruta
+ * cuyo slug ES o EN coincide con el pathname y devuelve su par en `target`; si
+ * no la reconoce (ruta suelta), cae a la raíz del idioma destino.
+ */
 export const alternatePathname = (pathname: string, target: Locale): string => {
-  if (target === "en") return pathname.startsWith("/en") ? pathname : "/en";
-  return "/";
+  const match = Object.values(ROUTES).find(
+    (entry) => entry.es === pathname || entry.en === pathname,
+  );
+  if (match) return match[target];
+  return target === "en" ? "/en" : "/";
 };

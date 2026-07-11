@@ -169,6 +169,142 @@ export const es = {
   "footer.followTitle": "Sígueme",
   "footer.rights": "Todos los derechos reservados.",
   "footer.madeBy": "Desarrollado por",
+
+  // ── Navegación (rutas de curso) ─────────────────────────────────────────
+  "nav.home": "Inicio",
+  "nav.kids": "Niños",
+  "nav.regular": "Regulares",
+  "nav.spanish": "Español",
+  "nav.specials": "Especiales",
+
+  // ── Home: resumen de cursos ─────────────────────────────────────────────
+  "home.coursesEyebrow": "Nuestros cursos",
+  "home.coursesTitle": "Encuentra tu clase perfecta",
+  "home.coursesSubtitle":
+    "Elige el curso a tu medida. Cada uno tiene su propia página con horarios, temario y precios.",
+  "home.learnMore": "Ver detalles",
+  "home.kidsCard":
+    "Inglés para niños de 6 a 11 años, con juegos, dinámicas y mucha diversión.",
+  "home.regularCard":
+    "Para adultos y adolescentes, por nivel: principiante, intermedio y avanzado.",
+  "home.spanishCard":
+    "¿Hablas inglés y quieres aprender español? Sin presión, jugando y platicando.",
+  "home.specialsCard":
+    "Festivales y clases temáticas únicas: Navidad, Halloween, ciencia y más.",
+
+  // ── Etiquetas de curso (compartidas) ────────────────────────────────────
+  "course.scheduleTitle": "Horarios",
+  "course.topicsTitle": "Temas que veremos",
+  "course.activitiesTitle": "Cómo aprendemos",
+  "course.otherSchedule":
+    "¿Necesitas otro día u horario? Escríbeme por privado y lo acomodamos.",
+  "course.examNote": "Examen GRATIS cada dos meses para mostrar tu avance.",
+  "course.absenceNote":
+    "Si faltas y afecta tu aprendizaje, te comparto ejercicios para ponerte al día.",
+  "course.zoomNote": "Clases por Zoom; el link llega a tu correo electrónico.",
+  "course.cta": "Aparta tu lugar",
+  "course.backHome": "Volver al inicio",
+  "course.online": "En línea por Zoom",
+  "course.faqTitle": "Buen saber",
+  "course.examTitle": "Exámenes",
+  "course.absenceTitle": "¿Faltaste a una clase?",
+  "course.formatTitle": "Formato de las clases",
+
+  // Precios (compartidos)
+  "pricing.title": "Inversión",
+  "pricing.subtitle":
+    "Precios claros, sin sorpresas. El pago se hace un día antes de la clase.",
+  "pricing.firstClass": "Primera clase",
+  "pricing.firstClassNote":
+    "Clase de introducción para conocer tus intereses y tu nivel.",
+  "pricing.perClass": "Por clase",
+  "pricing.monthly": "Paquete mensual",
+  "pricing.packageFree":
+    "Si pagas el paquete desde la primera clase, la primera es gratis.",
+  "pricing.payBefore": "El pago se realiza un día antes de la clase.",
+  "pricing.approxNote":
+    "El equivalente en la otra moneda es aproximado (tipo de cambio referencial).",
+
+  // ── Kids ────────────────────────────────────────────────────────────────
+  "kids.eyebrow": "Niños",
+  "kids.title": "Inglés para niños",
+  "kids.subtitle":
+    "Grupos reducidos por edad (6 a 11 años) donde aprender inglés se siente como jugar.",
+  "kids.intro":
+    "Lo más importante es que los peques estén cómodos y se diviertan aprendiendo inglés. Trabajamos algo de escritura y ejercicios tradicionales, pero sobre todo dinámicas, presentaciones y juegos que integran gramática y vocabulario en cada clase.",
+  "kids.groupsTitle": "Grupos y horarios",
+  "kids.advancedNote":
+    "Si un peque muestra un nivel más avanzado que el resto, abrimos un grupo para que aprenda a su ritmo.",
+  "kids.cameraNote":
+    "Pedimos siempre cámara encendida y participación, para mantener la atención y la dinámica de la clase.",
+
+  // ── Regulares ───────────────────────────────────────────────────────────
+  "regular.eyebrow": "Regulares",
+  "regular.title": "Clases regulares",
+  "regular.subtitle":
+    "Para adultos y adolescentes, organizadas por nivel: principiante, intermedio y avanzado.",
+  "regular.intro":
+    "En Fantastic English Class aplicamos el inglés de forma… fantástica. Seguimos las necesidades de cada nivel con muchas dinámicas, lejos del libro de texto y las unidades tediosas, pero siempre aprendiendo el idioma de manera profesional y correcta.",
+  "regular.levelsTitle": "Niveles y horarios",
+
+  // ── Fantastic Spanish Class ─────────────────────────────────────────────
+  "spanish.eyebrow": "Fantastic Spanish Class",
+  "spanish.title": "Clases de español",
+  "spanish.subtitle":
+    "¿Hablas inglés y quieres aprender español? Encontraste tu lugar correcto.",
+  "spanish.intro":
+    "Aprende español sin presión, jugando y platicando de una forma divertida y relajada. Vamos a tu ritmo y a partir de tus intereses.",
+  "spanish.scheduleTitle": "Horario",
+
+  // ── Cursos especiales / festivales ──────────────────────────────────────
+  "specials.eyebrow": "Especiales",
+  "specials.title": "Cursos especiales y festivales",
+  "specials.subtitle":
+    "A veces enfocados a un solo nivel, a veces mezclando todos. Clases temáticas y dinámicas únicas que se salen de lo común.",
+  "specials.listTitle": "Algunos de nuestros festivales",
+  "specials.note": "¿Se te ocurre una temática? Coméntanosla y la armamos.",
+
+  // ── Coméntanos (buzón de comentarios) ───────────────────────────────────
+  "comments.eyebrow": "Coméntanos",
+  "comments.title": "Coméntanos lo que sea",
+  "comments.subtitle":
+    "Desde qué temas te gustaría aprender hasta qué dinámicas agregar o quitar. Lo que tú quieras, te leemos.",
+  "comments.nameLabel": "Nombre (opcional)",
+  "comments.emailLabel": "Correo (opcional)",
+  "comments.messageLabel": "Tu comentario",
+  "comments.messagePlaceholder": "Escríbenos lo que quieras…",
+  "comments.submit": "Enviar comentario",
+  "comments.sending": "Enviando…",
+  "comments.success": "¡Gracias por tu comentario! Lo tomamos en cuenta.",
+  "comments.sendAnother": "Enviar otro comentario",
+
+  // ── Home: meta de las cards de curso ────────────────────────────────────
+  "home.kidsMeta": "Niños de 6 a 11",
+  "home.regularMeta": "3 niveles",
+  "home.spanishMeta": "Para angloparlantes",
+  "home.specialsMeta": "Clases temáticas",
+  "home.fromPrice": "Desde",
+
+  // ── Highlights (datos reales — reemplaza el viejo "por qué") ─────────────
+  "highlights.eyebrow": "Por qué elegirnos",
+  "highlights.title": "Aprender inglés en serio, sin aburrirte",
+  "highlights.subtitle":
+    "Clases pensadas para que hables desde el primer día, con seguimiento real de tu avance.",
+  "highlights.online.title": "En línea por Zoom",
+  "highlights.online.desc":
+    "Toma tus clases desde donde estés; el link llega a tu correo.",
+  "highlights.exam.title": "Examen gratis cada 2 meses",
+  "highlights.exam.desc":
+    "Medimos tu avance sin costo, para ver resultados reales.",
+  "highlights.groups.title": "Grupos reducidos",
+  "highlights.groups.desc":
+    "Por edad y nivel, para atención cercana y el ritmo adecuado.",
+  "highlights.intro.title": "Primera clase de introducción",
+  "highlights.intro.desc":
+    "Conocemos tus intereses y tu nivel antes de empezar.",
+
+  // ── Contacto (home condensado + página dedicada) ────────────────────────
+  "contact.homeCta": "Ver todas las formas de contacto",
 } as const;
 
 export type TranslationKey = keyof typeof es;

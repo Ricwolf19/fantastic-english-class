@@ -16,7 +16,7 @@ import { cn } from "@/lib/utils";
  */
 export const Hero = ({ locale }: { locale: Locale }) => {
   const t = createT(locale);
-  const seeClasses = locale === "en" ? "/en#classes" : "/#servicios";
+  const seeClasses = locale === "en" ? "/en#courses" : "/#cursos";
 
   return (
     <section className="relative flex min-h-[92svh] flex-col overflow-hidden">

@@ -162,4 +162,140 @@ export const en: Record<TranslationKey, string> = {
   "footer.followTitle": "Follow me",
   "footer.rights": "All rights reserved.",
   "footer.madeBy": "Built by",
+
+  // ── Navigation (course routes) ──────────────────────────────────────────
+  "nav.home": "Home",
+  "nav.kids": "Kids",
+  "nav.regular": "Regular",
+  "nav.spanish": "Spanish",
+  "nav.specials": "Specials",
+
+  // ── Home: course summary ────────────────────────────────────────────────
+  "home.coursesEyebrow": "Our courses",
+  "home.coursesTitle": "Find your perfect class",
+  "home.coursesSubtitle":
+    "Pick the course that fits you. Each one has its own page with schedule, syllabus and pricing.",
+  "home.learnMore": "See details",
+  "home.kidsCard":
+    "English for kids ages 6 to 11, with games, activities and lots of fun.",
+  "home.regularCard":
+    "For adults and teens, by level: beginner, intermediate and advanced.",
+  "home.spanishCard":
+    "Speak English and want to learn Spanish? No pressure, playing and talking.",
+  "home.specialsCard":
+    "Festivals and unique themed classes: Christmas, Halloween, science and more.",
+
+  // ── Course labels (shared) ──────────────────────────────────────────────
+  "course.scheduleTitle": "Schedule",
+  "course.topicsTitle": "What we'll cover",
+  "course.activitiesTitle": "How we learn",
+  "course.otherSchedule":
+    "Need another day or time? Message me directly and we'll work it out.",
+  "course.examNote": "FREE exam every two months to show your progress.",
+  "course.absenceNote":
+    "If you miss a class and it affects your learning, I'll share exercises to catch up.",
+  "course.zoomNote": "Classes via Zoom; the link arrives in your email.",
+  "course.cta": "Save your spot",
+  "course.backHome": "Back to home",
+  "course.online": "Online via Zoom",
+  "course.faqTitle": "Good to know",
+  "course.examTitle": "Exams",
+  "course.absenceTitle": "Missed a class?",
+  "course.formatTitle": "Class format",
+
+  // Pricing (shared)
+  "pricing.title": "Pricing",
+  "pricing.subtitle":
+    "Clear prices, no surprises. Payment is made one day before class.",
+  "pricing.firstClass": "First class",
+  "pricing.firstClassNote":
+    "Intro class to get to know your interests and your level.",
+  "pricing.perClass": "Per class",
+  "pricing.monthly": "Monthly package",
+  "pricing.packageFree":
+    "Pay the package from your first class and the first class is free.",
+  "pricing.payBefore": "Payment is made one day before class.",
+  "pricing.approxNote":
+    "The equivalent in the other currency is approximate (reference rate).",
+
+  // ── Kids ────────────────────────────────────────────────────────────────
+  "kids.eyebrow": "Kids",
+  "kids.title": "English for kids",
+  "kids.subtitle":
+    "Small groups by age (6 to 11) where learning English feels like playing.",
+  "kids.intro":
+    "The most important thing is that kids feel comfortable and have fun learning English. We do some writing and traditional exercises, but mostly activities, presentations and games that weave grammar and vocabulary into every class.",
+  "kids.groupsTitle": "Groups & schedule",
+  "kids.advancedNote":
+    "If a kid shows a more advanced level than the rest, we open a group so they can learn at their own pace.",
+  "kids.cameraNote":
+    "We always ask for camera on and participation, to keep attention and the class dynamic alive.",
+
+  // ── Regular ─────────────────────────────────────────────────────────────
+  "regular.eyebrow": "Regular",
+  "regular.title": "Regular classes",
+  "regular.subtitle":
+    "For adults and teens, organized by level: beginner, intermediate and advanced.",
+  "regular.intro":
+    "At Fantastic English Class we apply English… fantastically. We follow each level's needs with plenty of activities, far from the textbook and tedious units, but always learning the language professionally and correctly.",
+  "regular.levelsTitle": "Levels & schedule",
+
+  // ── Fantastic Spanish Class ─────────────────────────────────────────────
+  "spanish.eyebrow": "Fantastic Spanish Class",
+  "spanish.title": "Spanish classes",
+  "spanish.subtitle":
+    "Speak English and want to learn Spanish? You just found your place — correcto.",
+  "spanish.intro":
+    "Learn Spanish without pressure, playing and talking in a fun, relaxed way. We go at your pace, starting from your interests.",
+  "spanish.scheduleTitle": "Schedule",
+
+  // ── Special classes / festivals ─────────────────────────────────────────
+  "specials.eyebrow": "Specials",
+  "specials.title": "Special classes & festivals",
+  "specials.subtitle":
+    "Sometimes focused on a single level, sometimes mixing them all. Themed classes and unique dynamics that break the routine.",
+  "specials.listTitle": "Some of our festivals",
+  "specials.note": "Got a theme in mind? Tell us and we'll build it.",
+
+  // ── Tell us anything (comments box) ─────────────────────────────────────
+  "comments.eyebrow": "Tell us",
+  "comments.title": "Tell us anything",
+  "comments.subtitle":
+    "From topics you'd like to learn to dynamics to add or remove. Whatever you want — we're listening.",
+  "comments.nameLabel": "Name (optional)",
+  "comments.emailLabel": "Email (optional)",
+  "comments.messageLabel": "Your comment",
+  "comments.messagePlaceholder": "Write us anything…",
+  "comments.submit": "Send comment",
+  "comments.sending": "Sending…",
+  "comments.success": "Thanks for your comment! We'll take it into account.",
+  "comments.sendAnother": "Send another comment",
+
+  // ── Home: course card meta ──────────────────────────────────────────────
+  "home.kidsMeta": "Kids 6 to 11",
+  "home.regularMeta": "3 levels",
+  "home.spanishMeta": "For English speakers",
+  "home.specialsMeta": "Themed classes",
+  "home.fromPrice": "From",
+
+  // ── Highlights (real facts — replaces the old "why") ────────────────────
+  "highlights.eyebrow": "Why choose us",
+  "highlights.title": "Learn English for real, without the boredom",
+  "highlights.subtitle":
+    "Classes built so you speak from day one, with real tracking of your progress.",
+  "highlights.online.title": "Online via Zoom",
+  "highlights.online.desc":
+    "Take your classes from anywhere; the link arrives in your email.",
+  "highlights.exam.title": "Free exam every 2 months",
+  "highlights.exam.desc":
+    "We measure your progress at no cost, for real results.",
+  "highlights.groups.title": "Small groups",
+  "highlights.groups.desc":
+    "By age and level, for close attention and the right pace.",
+  "highlights.intro.title": "Intro first class",
+  "highlights.intro.desc":
+    "We get to know your interests and level before starting.",
+
+  // ── Contact (condensed home + dedicated page) ───────────────────────────
+  "contact.homeCta": "See all contact options",
 };
