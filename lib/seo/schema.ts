@@ -1,4 +1,6 @@
 import { createT, type Locale } from "@/lib/i18n/config";
+import type { TranslationKey } from "@/lib/i18n/es";
+import type { Money } from "@/lib/pricing";
 import { site, waLink } from "@/lib/site";
 import { absoluteUrl, siteUrl } from "@/lib/utils";
 
@@ -64,6 +66,59 @@ export const personSchema = (locale: Locale) => ({
       }
     : {}),
 });
+
+/** Convierte un precio a `{ price, priceCurrency }` para un Offer (una moneda). */
+const offerFromMoney = (money: Money) => {
+  if (money.mxn != null) return { price: money.mxn, priceCurrency: "MXN" };
+  if (money.usd != null) return { price: money.usd, priceCurrency: "USD" };
+  return null;
+};
+
+/**
+ * Course — cada curso como oferta educativa, con proveedor = la escuela y un
+ * Offer con el precio por clase. Alimenta rich results de cursos en Google.
+ */
+export const courseSchema = (
+  locale: Locale,
+  {
+    nameKey,
+    descKey,
+    price,
+    path,
+  }: {
+    nameKey: TranslationKey;
+    descKey: TranslationKey;
+    price: Money;
+    path: string;
+  },
+) => {
+  const t = createT(locale);
+  const offer = offerFromMoney(price);
+  return {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    name: t(nameKey),
+    description: t(descKey),
+    url: absoluteUrl(path),
+    inLanguage: locale,
+    provider: { "@id": `${siteUrl}/#school` },
+    hasCourseInstance: {
+      "@type": "CourseInstance",
+      courseMode: "online",
+      inLanguage: locale,
+    },
+    ...(offer
+      ? {
+          offers: {
+            "@type": "Offer",
+            ...offer,
+            category: "Paid",
+            availability: "https://schema.org/InStock",
+          },
+        }
+      : {}),
+  };
+};
 
 /** WebSite — la entidad del sitio, con acción de contacto por WhatsApp. */
 export const websiteSchema = (locale: Locale) => ({
